@@ -16,8 +16,6 @@ export default function useFetchMessages(userID, contactId, aiResponded) {
     // const { currentUser } = useContext(UserContext)
     // const { aiResponded } = useContext(MessageContext)
 
-    console.log(aiResponded)
-
     const initial_state = {
         replys: [],
         sends: [],

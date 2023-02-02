@@ -9,9 +9,6 @@ import { UserContext } from './utils/contexts/UserContext'
 function App() {
   const {currentUser} = useContext(UserContext)
 
-  // console.log(currentUser.email, currentUser)
-
-
 
   return (
     

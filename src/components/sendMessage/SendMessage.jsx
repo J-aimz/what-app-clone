@@ -1,5 +1,4 @@
 import css from './SendMessage.module.scss'
-import { TiTick } from 'react-icons/ti'
 import { useContext } from 'react'
 import { UserContext } from '../../utils/contexts/UserContext'
 
@@ -13,7 +12,7 @@ function SendMessage(props) {
         <div className={`${css.msg} `}>
           <span>{props.data.msg}</span>
           <span>
-            {/* {new Date(props.data.timestamp?.toDate()).toLocaleTimeString() + ' ' + new Date(props.data.timestamp?.toDate()).toDateString()} */}
+            {new Date(props.data?.timestamp?.seconds).toLocaleTimeString()}
           </span>
         </div>
       </div>

@@ -42,9 +42,13 @@ function ChatContainer() {
   useEffect(() => {
     setMsgs(prev => messageState.messages.sort(sortMessages))
     
-    setTimeout(() => {
+    const timer = setTimeout(() => {
       lastMsgsCon.current.scrollIntoView()
-    }, 1500);
+    }, 1400);
+
+    return () => {
+      clearTimeout(timer)
+    }
   }, [messageState.messages, aiResponded])
 
 

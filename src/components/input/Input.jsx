@@ -42,7 +42,8 @@ function Input() {
     }
 
     async function sendMsgToGPT(message, from, to) {
-        const response = await fetch("http://localhost:3080", {
+        // const response = await fetch("http://localhost:3080", {
+            const response = await fetch("/.netlify/functions/fetch-gpt", {
             headers: {
                 "Content-Type": "application/json"
             },
@@ -50,11 +51,13 @@ function Input() {
             body: JSON.stringify({
                 message: `${message}`
             })
-        })
+            })
+        
+        // console.log(response.json(), 'this is i')
         const data = await response.json()
-        console.log(data.data, 'openAI')
         // post gtp response to db
         sendMsg(from, data.data, to)
+        // sendMsg(from, data, to)
         setTimeout(() => {
             setAiResponded(prev => prev + 1)
         }, 1200)

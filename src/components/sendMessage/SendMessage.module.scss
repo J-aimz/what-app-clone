@@ -9,7 +9,8 @@
     border-radius: 8px;
     font-size: 14px;
     line-height: 1.2;
-    max-width: 300px;
+    min-width: 300px;
+    max-width: 350px;
     letter-spacing: 0.04em;
     margin-top: .1rem;
     padding: 6px 7px 8px 9px;
@@ -19,8 +20,17 @@
     align-items: flex-end;
     gap: 1rem;
 
+    & span:nth-child(1) {
+        flex: 1;
+        display: inline-block;
+        min-width: 100px;
+    }
+
     & span:last-child{
-        font-size: 12px;
+        font-size: 10px;
+        flex: .3;
+        display: inline-block;
+        text-align: right;
     }
 }
 
